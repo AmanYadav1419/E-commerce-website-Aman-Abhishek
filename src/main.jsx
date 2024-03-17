@@ -17,6 +17,7 @@ import "././assets/css/style.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Home/Home.jsx";
 import Blog from "./blog/Blog.jsx";
+import Shop from "./shop/Shop.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/blog", element: <Blog /> },
+      {
+        path: "/shop",
+        element: <Shop />
+      }
     ],
   },
 ]);

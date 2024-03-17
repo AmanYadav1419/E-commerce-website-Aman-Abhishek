@@ -1,8 +1,11 @@
 import React from 'react'
+import PageHeader from '../components/PageHeader'
 
 const Shop = () => {
   return (
-    <div>Shop</div>
+    <div>
+        <PageHeader title="Our Shop Page" curPage="Shop"/>
+    </div>
   )
 }
 

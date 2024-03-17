@@ -7,7 +7,9 @@ function App() {
   return (
     <>
     <NavItems/>
+    <div className="min-vh-100">
      <Outlet/>
+    </div>
      <Footer/>
     </>
   )
