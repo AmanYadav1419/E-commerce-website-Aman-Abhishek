@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const title = "About ShopCart";
 const desc =
-  "Eduaid theme number one world class university in the world There are student are studing always in this university for all time.";
+  "This is the frontend project created by abhishek palve and aman yadav the website is still nder processing and need to be completed. they completed their tasks";
 const ItemTitle = "Categories";
 const quickTitle = "Quick Links";
 const tweetTitle = "Recent Tweets";
@@ -11,11 +11,11 @@ const tweetTitle = "Recent Tweets";
 const addressList = [
   {
     iconName: "icofont-google-map",
-    text: " New York, USA.",
+    text: " Nashik, Maharashtra",
   },
   {
     iconName: "icofont-phone",
-    text: " +880 123 456 789",
+    text: " +91 1234567890",
   },
   {
     iconName: "icofont-envelope",
@@ -110,7 +110,7 @@ const tweetList = [
     iconName: "icofont-twitter",
     desc: (
       <p>
-        Aminur islam <a href="#">@ShopCart Greetings! #HTML_Template</a> Grab
+       Aman Yadav <a href="#">@ShopCart Greetings! #HTML_Template</a> Grab
         your item, 50% Big Sale Offer !!
       </p>
     ),
@@ -119,7 +119,7 @@ const tweetList = [
     iconName: "icofont-twitter",
     desc: (
       <p>
-        Somrat islam <a href="#">@ShopCart Hey! #HTML_Template</a> Grab your
+        Abhishek Palve <a href="#">@ShopCart Hey! #HTML_Template</a> Grab your
         item, 50% Big Sale Offer !!
       </p>
     ),
