@@ -7,6 +7,7 @@ import ProductCards from "./ProductCards";
 import Pagination from "./Pagination";
 import Search from "./Search";
 import ShopCategory from "./ShopCategory";
+import PopularPost from "./PopularPost";
 
 const Shop = () => {
   const [GridList, setGridList] = useState(true);
@@ -29,18 +30,18 @@ const Shop = () => {
     setCurrentPage(pageNumber);
   };
 
-//   filtered product based on category
-const [selectedCategory, setSelectedCategory] = useState("All");
-const menuItems = [...new Set(Data.map((value) => value.category))];
+  //   filtered product based on category
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const menuItems = [...new Set(Data.map((value) => value.category))];
 
-const filterItem = (curcat) => {
+  const filterItem = (curcat) => {
     const newItem = Data.filter((newVal) => {
-        return newVal.category === curcat;
-    })
+      return newVal.category === curcat;
+    });
 
     setSelectedCategory(curcat);
     setProducts(newItem);
-}
+  };
 
   return (
     <div>
@@ -87,12 +88,14 @@ const filterItem = (curcat) => {
             <div className="col-lg-4 col-12">
               <aside>
                 <Search products={products} GridList={GridList} />
-                <ShopCategory 
-                filterItem={filterItem}
-                setItem={setProducts}
-                menuItems={menuItems}
-                setProducts={setProducts}
-                selectedCategory={selectedCategory}/>
+                <ShopCategory
+                  filterItem={filterItem}
+                  setItem={setProducts}
+                  menuItems={menuItems}
+                  setProducts={setProducts}
+                  selectedCategory={selectedCategory}
+                />
+                <PopularPost />
               </aside>
             </div>
           </div>
