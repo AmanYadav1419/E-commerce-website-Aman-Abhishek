@@ -42,18 +42,20 @@ const tagsList = [
 ];
 
 const Tags = () => {
-  return <div className="widget widget-tags">
-    <div className="widget-header">
+  return (
+    <div className="widget widget-tags">
+      <div className="widget-header">
         <h5 className="title">{title}</h5>
+      </div>
+      <ul className="widget-wrapper">
+        {tagsList.map((value, index) => (
+          <li key={index}>
+            <a href={value.link}>{value.text}</a>
+          </li>
+        ))}
+      </ul>
     </div>
-<ul className="widget-wrapper">
-    {
-        tagsList.map((value,index)=> (
-            <li  key={index}><a href={value.link}>{value.text}</a></li>
-        ))
-    }
-</ul>
-  </div>;
+  );
 };
 
 export default Tags;
