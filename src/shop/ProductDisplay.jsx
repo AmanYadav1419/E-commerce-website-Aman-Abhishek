@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // for now hardcoded description will get used later on need to add desc on each product on ProductDescription file
 const desc =
@@ -23,6 +24,18 @@ const ProductDisplay = ({ item }) => {
   // for handling color selection and applying selection
   const handleColorChange = (event) => {
     setColor(event.target.value);
+  };
+
+  // handle descrease quantity
+  const handleDecrease = () => {
+    if (prequantity > 1) {
+      setQuantity(prequantity - 1);
+    }
+  };
+
+  // handle increase quantity
+  const handleIncrease = () => {
+    setQuantity(prequantity + 1);
   };
 
   return (
@@ -71,6 +84,42 @@ const ProductDisplay = ({ item }) => {
             </select>
             <i className="icofont-rounded-down"></i>
           </div>
+
+          {/* cart plus minus */}
+          <div className="cart-plus-minus">
+            <div className="dec qtybutton" onClick={handleDecrease}>
+              -
+            </div>
+            <input
+              onChange={(e) => setQuantity(parseInt(e.target.value, 10))} //10 is the maximum number will be allowed to select
+              className="cart-plus-minus-box"
+              type="text"
+              name="qtybutton"
+              id="qtybutton"
+              value={prequantity}
+            />
+            <div className="inc qtybutton" onClick={handleIncrease}>
+              +
+            </div>
+          </div>
+
+          {/* coupon feild */}
+          <div className="discount-code mb-2">
+            <input
+              type="text"
+              placeholder="Enter Discount code"
+              onChange={(event) => setCoupon(event.target.value)}
+            />
+          </div>
+
+          {/* btn sections */}
+          <button type="submit" className="lab-btn">
+            <span>Add to Cart</span>
+          </button>
+
+          <Link to="/cart-page" className="lab-btn bg-primary">
+            <span>Check Out</span>
+          </Link>
         </form>
       </div>
     </div>
