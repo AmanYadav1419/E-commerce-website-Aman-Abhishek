@@ -47,7 +47,7 @@ const SingleProduct = () => {
                           <Swiper
                             spaceBetween={30}
                             slidesPerView={1}
-                            Loop={"true"}
+                            loop={"true"}
                             autoplay={{
                               delay: 2000,
                               disableOnInteraction: false,

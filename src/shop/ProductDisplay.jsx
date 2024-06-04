@@ -9,7 +9,7 @@ const ProductDisplay = ({ item }) => {
   // console.log(item)
 
   // destructing the item object
-  const { name, id, price, seller, ratingsCount, quantity } = item;
+  const { name, id, price, seller, ratingsCount, quantity, img } = item;
 
   const [prequantity, setQuantity] = useState(quantity);
   const [coupon, setCoupon] = useState("");
@@ -38,6 +38,40 @@ const ProductDisplay = ({ item }) => {
     setQuantity(prequantity + 1);
   };
 
+  // handle submit form
+  const handleSubmit = (event) => {
+    event.preventDefault(); //because of this page is not being refreshed and the data is not get lost
+    const product = {
+        id: id,
+        img : img,
+        name: name,
+        price:price,
+        quantity: prequantity,
+        size:size,
+        color: color,
+        coupon: coupon 
+    }
+
+    // console.log(product);
+
+    const exisitingCart = JSON.parse(localStorage.getItem("cart")) || []
+
+    const exisitingProductIndex = exisitingCart.findIndex((item) => item.id === id);
+
+    if(exisitingProductIndex !== -1){
+        exisitingCart[exisitingProductIndex].quantity += prequantity
+    }
+    else {
+        exisitingCart.push(product);
+    }
+
+    //update local storage
+    localStorage.setItem("cart", JSON.stringify(exisitingCart));
+
+    // reset form feild
+    setQuantity()
+};
+
   return (
     <div>
       <div>
@@ -57,7 +91,7 @@ const ProductDisplay = ({ item }) => {
 
       {/* cart component */}
       <div>
-        <form>
+        <form onSubmit={handleSubmit}>
           {/* for size */}
           <div className="select-product size">
             <select value={size} onChange={handleSizeChange}>
