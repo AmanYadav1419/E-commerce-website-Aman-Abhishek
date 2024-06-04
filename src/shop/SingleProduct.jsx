@@ -68,10 +68,10 @@ const SingleProduct = () => {
                             })}
                           </Swiper>
                           <div className="pro-single-next">
-                            <i className="ico-rounded-left"></i>
+                            <i className="icofont-rounded-left"></i>
                           </div>
                           <div className="pro-single-prev">
-                            <i className="ico-rounded-right"></i>
+                            <i className="icofont-rounded-right"></i>
                           </div>
                         </div>
                       </div>
