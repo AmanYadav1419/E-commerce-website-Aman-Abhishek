@@ -21,10 +21,10 @@ const SingleProduct = () => {
       .then((dataShop) => setProducts(dataShop));
   }, []);
 
-  //   console.log(Products)
+  // console.log(Products)
 
   const result = Products.filter((p) => p.id === id);
-  //   console.log(result);
+  // console.log(result);
 
   return (
     <div>
@@ -44,34 +44,22 @@ const SingleProduct = () => {
                     <div className="col-md-6 col-12">
                       <div className="product-thumb">
                         <div className="swiper-container pro-single-top">
-                          <Swiper
-                            spaceBetween={30}
-                            slidesPerView={1}
-                            loop={"true"}
-                            autoplay={{
-                              delay: 2000,
-                              disableOnInteraction: false,
-                            }}
-                            modules={[Autoplay]}
-                            navigation={{
-                              prevEl: ".pro-single-prev",
-                              nextEl: ".pro-single-next",
-                            }}
-                            className="mySwiper"
-                          >
-                            {result.map((item, index) => {
+                          <Swiper className="mySwiper">
+                            {
+                            result.map((item, index) => (
                               <SwiperSlide key={index}>
                                 <div className="single-thumb">
                                   <img src={item.img} alt="" />
                                 </div>
-                              </SwiperSlide>;
-                            })}
+                              </SwiperSlide>
+                            ))
+                            }
                           </Swiper>
                           <div className="pro-single-next">
-                            <i className="ico-rounded-left"></i>
+                            <i className="icofont-rounded-left"></i>
                           </div>
                           <div className="pro-single-prev">
-                            <i className="ico-rounded-right"></i>
+                            <i className="icofont-rounded-right"></i>
                           </div>
                         </div>
                       </div>
@@ -81,9 +69,9 @@ const SingleProduct = () => {
                     <div className="col-md-6 col-12">
                       <div className="post-content">
                         <div>
-                          {
-                            result.map(item => <ProductDisplay key={item.id} item={item}/>)
-                          }
+                          {result.map((item) => (
+                            <ProductDisplay key={item.id} item={item} />
+                          ))}
                         </div>
                       </div>
                     </div>
