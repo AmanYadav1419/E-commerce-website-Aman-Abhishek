@@ -155,6 +155,7 @@ const ProductDisplay = ({ item }) => {
             <span>Check Out</span>
           </Link>
         </form>
+        
       </div>
     </div>
   );
