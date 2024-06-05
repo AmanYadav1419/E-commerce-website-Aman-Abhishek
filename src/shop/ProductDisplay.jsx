@@ -42,35 +42,39 @@ const ProductDisplay = ({ item }) => {
   const handleSubmit = (event) => {
     event.preventDefault(); //because of this page is not being refreshed and the data is not get lost
     const product = {
-        id: id,
-        img : img,
-        name: name,
-        price:price,
-        quantity: prequantity,
-        size:size,
-        color: color,
-        coupon: coupon 
-    }
+      id: id,
+      img: img,
+      name: name,
+      price: price,
+      quantity: prequantity,
+      size: size,
+      color: color,
+      coupon: coupon,
+    };
 
     // console.log(product);
 
-    const exisitingCart = JSON.parse(localStorage.getItem("cart")) || []
+    const exisitingCart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    const exisitingProductIndex = exisitingCart.findIndex((item) => item.id === id);
+    const exisitingProductIndex = exisitingCart.findIndex(
+      (item) => item.id === id
+    );
 
-    if(exisitingProductIndex !== -1){
-        exisitingCart[exisitingProductIndex].quantity += prequantity
-    }
-    else {
-        exisitingCart.push(product);
+    if (exisitingProductIndex !== -1) {
+      exisitingCart[exisitingProductIndex].quantity += prequantity;
+    } else {
+      exisitingCart.push(product);
     }
 
     //update local storage
     localStorage.setItem("cart", JSON.stringify(exisitingCart));
 
     // reset form feild
-    setQuantity()
-};
+    setQuantity(1);
+    setSize("Select Size");
+    setColor("Select Color");
+    setCoupon("");
+  };
 
   return (
     <div>
@@ -155,7 +159,6 @@ const ProductDisplay = ({ item }) => {
             <span>Check Out</span>
           </Link>
         </form>
-        
       </div>
     </div>
   );
