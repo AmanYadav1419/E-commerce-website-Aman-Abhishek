@@ -131,29 +131,35 @@ const Review = () => {
 
         {/* description */}
         <div className="description">
-            {/* this is a random data */}
+          {/* this is a random data */}
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis
             laboriosam quibusdam rem ab, assumenda animi, minima inventore dolor
             sapiente eligendi cupiditate a consectetur magnam sed accusantium
             repellat similique. Temporibus enim sunt, error ullam atque
-            praesentium veniam sit ex dolore ipsam corrupti totam eveniet
-            dummy image not accurate this is only for dummy purpose.
+            praesentium veniam sit ex dolore ipsam corrupti totam eveniet dummy
+            image not accurate this is only for dummy purpose.
           </p>
 
           <div className="post-item">
             <div className="post-thumb">
-                {/* dummy image not accurate this is only for dummy purpose*/}
-                <img src="/src/assets/images/shop/01.jpg" alt="" />
+              {/* dummy image not accurate this is only for dummy purpose*/}
+              <img src="/src/assets/images/shop/01.jpg" alt="" />
             </div>
             <div className="post-content">
-                <ul className="lab-ul">
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, fugiat!</li>
-                    <li>consectetur adipisicing elit. Earum, fugiat!</li>
-                    <li>sit amet consectetur adipisicing elit. Earum, fugiat!</li>
-                    <li>Earum, fugiat! ipsum dolor sit amet.</li>
-                    <li>ipsum dolor sit amet consectetur adipisicing elit. Earum, fugiat!</li>
-                </ul>
+              <ul className="lab-ul">
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Earum, fugiat!
+                </li>
+                <li>consectetur adipisicing elit. Earum, fugiat!</li>
+                <li>sit amet consectetur adipisicing elit. Earum, fugiat!</li>
+                <li>Earum, fugiat! ipsum dolor sit amet.</li>
+                <li>
+                  ipsum dolor sit amet consectetur adipisicing elit. Earum,
+                  fugiat!
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -162,8 +168,8 @@ const Review = () => {
             laboriosam quibusdam rem ab, assumenda animi, minima inventore dolor
             sapiente eligendi cupiditate a consectetur magnam sed accusantium
             repellat similique. Temporibus enim sunt, error ullam atque
-            praesentium veniam sit ex dolore ipsam corrupti totam eveniet
-            dummy image not accurate this is only for dummy purpose.
+            praesentium veniam sit ex dolore ipsam corrupti totam eveniet dummy
+            image not accurate this is only for dummy purpose.
           </p>
         </div>
       </div>
