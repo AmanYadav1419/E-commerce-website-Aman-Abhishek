@@ -35,8 +35,6 @@ const CartPage = () => {
 
       localStorage.setItem("cart", JSON.stringify(cartItems));
     }
-
-    setCartItems();
   };
 
   // handle delete / remove Item function
@@ -56,6 +54,14 @@ const CartPage = () => {
   const updateLocalStorage = (cart) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   };
+
+  // cart subtotal
+  const cartSubTotal = cartItems.reduce((total, item) => {
+    return total + calculatetotalPrice(item);
+  }, 0);
+
+  // order total
+  const orderTotal = cartSubTotal;
 
   return <div>CartPage</div>;
 };
