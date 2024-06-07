@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
+import PopularPost from "./PopularPost";
+import Tags from "./Tags";
 
 // Import swiper react components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -46,15 +48,13 @@ const SingleProduct = () => {
                       <div className="product-thumb">
                         <div className="swiper-container pro-single-top">
                           <Swiper className="mySwiper">
-                            {
-                            result.map((item, index) => (
+                            {result.map((item, index) => (
                               <SwiperSlide key={index}>
                                 <div className="single-thumb">
                                   <img src={item.img} alt="" />
                                 </div>
                               </SwiperSlide>
-                            ))
-                            }
+                            ))}
                           </Swiper>
                           <div className="pro-single-next">
                             <i className="icofont-rounded-left"></i>
@@ -87,7 +87,14 @@ const SingleProduct = () => {
             </div>
 
             {/* Right side */}
-            <div className="col-lg-4 col-12">Right Side</div>
+            <div className="col-lg-4 col-12">
+              <aside className="ps-lg-4">
+                {/* popular posts */}
+                <PopularPost />
+                {/* tags */}
+                <Tags />
+              </aside>
+            </div>
           </div>
         </div>
       </div>
