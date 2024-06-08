@@ -125,7 +125,7 @@ const CartPage = () => {
                           </div>
                         </div>
                       </td>
-                      
+
                       {/* total price */}
                       <td className="cat-toprice">
                         ${calculatetotalPrice(item)}
@@ -144,6 +144,31 @@ const CartPage = () => {
             </div>
 
             {/*-------------- cart top ends --------------*/}
+
+            {/* cart bottom */}
+
+            <div className="cart-bottom">
+              {/* checkout box start */}
+              <div className="cart-checkout-box">
+                <form className="coupon">
+                  <input
+                    type="text"
+                    className="cart-page-input-text"
+                    name="coupon"
+                    id="coupon"
+                    placeholder="Coupon code..."
+                  />
+                  <input type="submit" value="Apply Coupon" />
+                </form>
+
+                <form className="cart-checkout">
+                  <input type="submit" value="Update Cart" />
+                  <div>CheckOutPage</div>
+                </form>
+              </div>
+
+              {/* checkout box end  */}
+            </div>
           </div>
         </div>
       </div>
