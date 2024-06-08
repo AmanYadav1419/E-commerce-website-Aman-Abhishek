@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PageHeader from "../components/PageHeader";
 import { Link } from "react-router-dom";
+import deImgUrl from "../assets/images/shop/del.png"
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -101,16 +102,29 @@ const CartPage = () => {
                         </div>
                       </td>
 
-                        <td className="cat-price">$ {item.price}</td>
-                        <td className="cat-quantity">
-                            <div className="cart-plus-minus">
-                                <div className="dec qtybutton" onClick={()=> handleDecreaseQuantity(item)}>-</div>
-                                <input type="text" className="cart-plus-minus-box" name="qtybutton" value={item.quantity} />
-                                <div className="inc qtybutton" onClick={()=> handleIncreaseQuantity(item)}>+</div>
-
-                            </div>
-                        </td>
-
+                      <td className="cat-price">$ {item.price}</td>
+                      <td className="cat-quantity">
+                        <div className="cart-plus-minus">
+                          <div
+                            className="dec qtybutton"
+                            onClick={() => handleDecreaseQuantity(item)}
+                          >
+                            -
+                          </div>
+                          <input
+                            type="text"
+                            className="cart-plus-minus-box"
+                            name="qtybutton"
+                            value={item.quantity}
+                          />
+                          <div
+                            className="inc qtybutton"
+                            onClick={() => handleIncreaseQuantity(item)}
+                          >
+                            +
+                          </div>
+                        </div>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
