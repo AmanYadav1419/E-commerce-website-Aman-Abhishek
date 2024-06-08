@@ -168,6 +168,60 @@ const CartPage = () => {
               </div>
 
               {/* checkout box end  */}
+
+              {/* shoping box */}
+
+              {/* left section / left side */}
+
+              <div className="shiping-box">
+                <div className="row">
+                  <div className="col-md-6 col-12">
+                    <div className="calculate-shiping">
+                      <h3>Calculate Shiping</h3>
+                      <div className="outline-select">
+                        <select>
+                          <option value="uk">United Kingdom (Uk)</option>
+                          <option value="usa">
+                            United States of America (USA)
+                          </option>
+                          <option value="ind">India (IND)</option>
+                          <option value="ban">BanglaDesh (Ban)</option>
+                          <option value="rus">Russia (RUS)</option>
+                          <option value="fr">France (FR)</option>
+                          <option value="nep">Nepal (NEP)</option>
+                        </select>
+                        <span className="select-icon">
+                          <i className="icofont-rounded-down"></i>
+                        </span>
+                      </div>
+
+                      <div className="outline-select shiping-select">
+                        <select>
+                          <option value="uk">London (Uk)</option>
+                          <option value="usa">New York (USA)</option>
+                          <option value="ind">New Delhi (IND)</option>
+                          <option value="ban">Dhaka (Ban)</option>
+                          <option value="rus">Moscow (RUS)</option>
+                          <option value="fr">Paris (FR)</option>
+                          <option value="nep">Kathmandu (NEP)</option>
+                        </select>
+                        <span className="select-icon">
+                          <i className="icofont-rounded-down"></i>
+                        </span>
+                      </div>
+                      <input
+                        type="text"
+                        name="postalCode"
+                        id="postalCode"
+                        placeholder="postCode/ZIP *"
+                        className="cart-page-input-text"
+                      />
+                      <button type="submit">Update Adress</button>
+                    </div>
+                  </div>
+                  <div className="col-md-6 col-12">Right Side</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
