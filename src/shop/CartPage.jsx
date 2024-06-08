@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PageHeader from "../components/PageHeader";
 import { Link } from "react-router-dom";
-import deImgUrl from "../assets/images/shop/del.png"
+import deImgUrl from "../assets/images/shop/del.png";
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -124,6 +124,18 @@ const CartPage = () => {
                             +
                           </div>
                         </div>
+                      </td>
+                      
+                      {/* total price */}
+                      <td className="cat-toprice">
+                        ${calculatetotalPrice(item)}
+                      </td>
+
+                      {/* edit or delete item */}
+                      <td className="cat-edit">
+                        <a href="#" onClick={() => handleRemoveItem(item)}>
+                          <img src={deImgUrl} alt="" />
+                        </a>
                       </td>
                     </tr>
                   ))}
