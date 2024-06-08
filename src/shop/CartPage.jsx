@@ -219,7 +219,33 @@ const CartPage = () => {
                       <button type="submit">Update Adress</button>
                     </div>
                   </div>
-                  <div className="col-md-6 col-12">Right Side</div>
+
+                  {/* Right section / Right side */}
+                  <div className="col-md-6 col-12">
+                    <div className="cart-overview">
+                      <h3>Cart Totals</h3>
+                      <ul className="lab-ul">
+                        <li>
+                          <span className="pull-left">Cart Subtotal</span>
+                          <p className="pull-right">$ {cartSubTotal} </p>
+                        </li>
+
+                        <li>
+                          <span className="pull-left">
+                            Shiping and Handling
+                          </span>
+                          <p className="pull-right">Free Shiping </p>
+                        </li>
+
+                        <li>
+                          <span className="pull-left">Order Total</span>
+                          <p className="pull-right">
+                            $ {orderTotal.toFixed(2)}
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
