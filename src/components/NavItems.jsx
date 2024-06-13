@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo/logo.png";
+import { AuthContext } from "../contexts/AuthProvider";
 
 const NavItems = () => {
   const [menuToggle, setMenuToggle] = useState(false);
   const [socialToggle, setSocialToggle] = useState(false);
   const [headerFixed, setHeaderFixed] = useState(false);
+
+  // auth info
+  const { user } = useContext(AuthContext);
+  console.log(user);
 
   // addEvent listener
   window.addEventListener("scroll", () => {
@@ -77,17 +82,22 @@ const NavItems = () => {
               </Link>
 
               {/* menu toggler */}
-              <div onClick={()=> setMenuToggle(!menuToggle)} className={`header-bar d-lg-none ${menuToggle ? "active" : ""}`}>
+              <div
+                onClick={() => setMenuToggle(!menuToggle)}
+                className={`header-bar d-lg-none ${menuToggle ? "active" : ""}`}
+              >
                 <span></span>
                 <span></span>
                 <span></span>
               </div>
 
               {/* social toggler */}
-              <div className="ellepsis-bar d-md-none" 
-              onClick={()=> setSocialToggle(!socialToggle)}
+              <div
+                className="ellepsis-bar d-md-none"
+                onClick={() => setSocialToggle(!socialToggle)}
               >
-              <i className="icofont-info-square"></i></div>
+                <i className="icofont-info-square"></i>
+              </div>
             </div>
           </div>
         </div>
