@@ -24,6 +24,8 @@ import SingleBlog from "./blog/SingleBlog.jsx";
 import About from "./about/About.jsx";
 import Contact from "./contact/Contact.jsx";
 import AuthProvider from "./contexts/AuthProvider.jsx";
+import PrivateRoute from "./PrivateRoute/PrivateRoute.jsx";
+import LoginPage from "./components/LoginPage.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,8 +44,13 @@ const router = createBrowserRouter([
         element: <SingleProduct />,
       },
       {
+        // as this is private route must need to login before checkout
         path: "/cart-page",
-        element: <CartPage />,
+        element: (
+          <PrivateRoute>
+            <CartPage />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/about",
@@ -54,6 +61,10 @@ const router = createBrowserRouter([
         element: <Contact />,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
   },
 ]);
 
