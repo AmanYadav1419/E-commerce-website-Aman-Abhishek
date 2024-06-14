@@ -39,11 +39,11 @@ const LoginPage = () => {
 
   const { signUpWithGmail, login } = useContext(AuthContext);
 
-  const locaation = useLocation();
+  const location = useLocation();
 
   const navigate = useNavigate();
 
-  const from = locaation.state?.from?.pathname || "/";
+  const from = location.state?.from?.pathname || "/";
 
   // handle login form submit
   const handleLogin = (event) => {
@@ -88,102 +88,104 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="login-section padding-tb section-bg">
-      <div className="container">
-        <div className="account-wrapper">
-          <h3 className="title">{title}</h3>
-          <form className="account-form" onSubmit={handleLogin}>
-            <div className="form-group">
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Email Address *"
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="Password *"
-                required
-              />
-            </div>
-
-            {/* showing error message */}
-            <div>
-              {errorMessage && (
-                <div className="error-message text-danger mb-2">
-                  {errorMessage}
-                </div>
-              )}
-            </div>
-
-            <div className="form-group">
-              <div className="d-flex justify-content-between flex-wrap pt-sm-2">
-                <div className="checkgroup">
-                  <input type="checkbox" name="remeber" id="remeber" />
-                  <label htmlFor="remeber">Remeber Me</label>
-                </div>
-                <Link to="/forgotpass">Forgot Password</Link>
+    <div>
+      <div className="login-section padding-tb section-bg">
+        <div className="container">
+          <div className="account-wrapper">
+            <h3 className="title">{title}</h3>
+            <form className="account-form" onSubmit={handleLogin}>
+              <div className="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email Address *"
+                  required
+                />
               </div>
-            </div>
 
-            <div className="form-group">
-              <button type="submit" className="d-block lab-btn">
-                <span>{btnText}</span>
-              </button>
-            </div>
-          </form>
+              <div className="form-group">
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Password *"
+                  required
+                />
+              </div>
 
-          {/* account bottom */}
-          <div className="account-bottom">
-            <span className="d-block cate pt-10">
-              Don't Have Account? <Link to="/sign-up">Sign Up</Link>
-            </span>
+              {/* showing error message */}
+              <div>
+                {errorMessage && (
+                  <div className="error-message text-danger mb-2">
+                    {errorMessage}
+                  </div>
+                )}
+              </div>
 
-            <span className="or">
-              <span>or</span>
-            </span>
+              <div className="form-group">
+                <div className="d-flex justify-content-between flex-wrap pt-sm-2">
+                  <div className="checkgroup">
+                    <input type="checkbox" name="remeber" id="remeber" />
+                    <label htmlFor="remeber">Remeber Me</label>
+                  </div>
+                  <Link to="/forgotpass">Forgot Password</Link>
+                </div>
+              </div>
 
-            {/* social login */}
-            <h5 className="subtitle">{socialTitle}</h5>
-            <ul className="lab-ul social-icons justfy-content-center">
-              {/* without using map  */}
-              <li>
-                {/* this is actually a google login */}
-                <button className="github" onClick={handleRegister}>
-                  <i className="icofont-github"></i>
+              <div className="form-group">
+                <button type="submit" className="d-block lab-btn">
+                  <span>{btnText}</span>
                 </button>
-              </li>
+              </div>
+            </form>
 
-              <li>
-                <a href="#" className="facebook">
-                  <i className="icofont-facebook"></i>
-                </a>
-              </li>
+            {/* account bottom */}
+            <div className="account-bottom">
+              <span className="d-block cate pt-10">
+                Don't Have Account? <Link to="/sign-up">Sign Up</Link>
+              </span>
 
-              <li>
-                <a href="#" className="twitter">
-                  <i className="icofont-twitter"></i>
-                </a>
-              </li>
+              <span className="or">
+                <span>or</span>
+              </span>
 
-              <li>
-                <a href="#" className="linkedin">
-                  <i className="icofont-linkedin"></i>
-                </a>
-              </li>
+              {/* social login */}
+              <h5 className="subtitle">{socialTitle}</h5>
+              <ul className="lab-ul social-icons justfy-content-center">
+                {/* without using map  */}
+                <li>
+                  {/* this is actually a google login */}
+                  <button className="github" onClick={handleRegister}>
+                    <i className="icofont-github"></i>
+                  </button>
+                </li>
 
-              <li>
-                <a href="#" className="instagram">
-                  <i className="icofont-instagram"></i>
-                </a>
-              </li>
-            </ul>
+                <li>
+                  <a href="#" className="facebook">
+                    <i className="icofont-facebook"></i>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" className="twitter">
+                    <i className="icofont-twitter"></i>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" className="linkedin">
+                    <i className="icofont-linkedin"></i>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" className="instagram">
+                    <i className="icofont-instagram"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

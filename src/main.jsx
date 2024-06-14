@@ -26,6 +26,7 @@ import Contact from "./contact/Contact.jsx";
 import AuthProvider from "./contexts/AuthProvider.jsx";
 import PrivateRoute from "./PrivateRoute/PrivateRoute.jsx";
 import LoginPage from "./components/LoginPage.jsx";
+import SignUpPage from "./components/SignUpPage.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginPage />,
+  },
+  {
+    path: "/sign-up",
+    element: <SignUpPage />,
   },
 ]);
 
