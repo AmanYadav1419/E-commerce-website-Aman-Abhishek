@@ -58,26 +58,33 @@ const LoginPage = () => {
     const password = form.password.value;
     // console.log(password)
 
-    login(email, password).then((result) => {
-      const user = result.user;
+    login(email, password)
+      .then((result) => {
+        const user = result.user;
 
-      alert("Login Sucessfull !!")
+        alert("Login Sucessfull !!");
 
-      navigate(from, { replace: true })
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        const errorMsg = error.message;
 
-    }).catch((error) => {
-
-      const errorMsg = error.message;
-
-      setErrorMessage("Please Provide Valid Email & Password")
-    
-    })
-  
+        setErrorMessage("Please Provide Valid Email & Password");
+      });
   };
 
   // handle register
   const handleRegister = () => {
-    
+    signUpWithGmail()
+      .then((result) => {
+        const user = result.user;
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        const errorMsg = error.message;
+
+        setErrorMessage("Please Provide Valid Email & Password");
+      });
   };
 
   return (
@@ -108,13 +115,11 @@ const LoginPage = () => {
 
             {/* showing error message */}
             <div>
-              {
-                errorMessage && (
-                  <div className="error-message text-danger mb-2">
-                    {errorMessage}
-                  </div>
-                )
-              }
+              {errorMessage && (
+                <div className="error-message text-danger mb-2">
+                  {errorMessage}
+                </div>
+              )}
             </div>
 
             <div className="form-group">
@@ -149,6 +154,7 @@ const LoginPage = () => {
             <ul className="lab-ul social-icons justfy-content-center">
               {/* without using map  */}
               <li>
+                {/* this is actually a google login */}
                 <button className="github" onClick={handleRegister}>
                   <i className="icofont-github"></i>
                 </button>
