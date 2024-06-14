@@ -48,6 +48,31 @@ const LoginPage = () => {
   // handle login form submit
   const handleLogin = (event) => {
     event.preventDefault();
+
+    const form = event.target;
+    // console.log(form);
+
+    const email = form.email.value;
+    // console.log(email)
+
+    const password = form.password.value;
+    // console.log(password)
+
+    login(email, password).then((result) => {
+      const user = result.user;
+
+      alert("Login Sucessfull !!")
+
+      navigate(from, { replace: true })
+
+    }).catch((error) => {
+
+      const errorMsg = error.message;
+
+      setErrorMessage("Please Provide Valid Email & Password")
+    
+    })
+  
   };
 
   // handle register
@@ -79,6 +104,17 @@ const LoginPage = () => {
                 placeholder="Password *"
                 required
               />
+            </div>
+
+            {/* showing error message */}
+            <div>
+              {
+                errorMessage && (
+                  <div className="error-message text-danger mb-2">
+                    {errorMessage}
+                  </div>
+                )
+              }
             </div>
 
             <div className="form-group">
