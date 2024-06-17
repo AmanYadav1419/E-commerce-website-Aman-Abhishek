@@ -17,3 +17,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export default app;
+
+// console.log('API Key:', import.meta.env.VITE_APIKEY);
+// console.log('Auth Domain:', import.meta.env.VITE_AUTHDOMAIN);
+// console.log('Project ID:', import.meta.env.VITE_PROJECTID);
+// console.log('Storage Bucket:', import.meta.env.VITE_STORAGEBUCKET);
+// console.log('Messaging Sender ID:', import.meta.env.VITE_MESSAGINGSENDERID);
+// console.log('App ID:', import.meta.env.VITE_APPID);

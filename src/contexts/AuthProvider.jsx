@@ -11,7 +11,7 @@ import {
 } from "firebase/auth";
 
 export const AuthContext = createContext();
-const auth = getAuth();
+const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
@@ -41,17 +41,14 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
-  // user is availabe or not
-
+  // user is available or not
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
     });
-    
-    return () => {
-      return unsubscribe();
-    };
+
+    return () => unsubscribe();
   }, []);
 
   const authInfo = {

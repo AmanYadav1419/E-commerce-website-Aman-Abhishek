@@ -12,9 +12,7 @@ const SignUpPage = () => {
   const { signUpWithGmail, createUser } = useContext(AuthContext);
 
   const location = useLocation();
-
   const navigate = useNavigate();
-
   const from = location.state?.from?.pathname || "/";
 
   // handle register
@@ -25,9 +23,7 @@ const SignUpPage = () => {
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        const errorMsg = error.message;
-
-        setErrorMessage("Please Provide Valid Email & Password");
+        setErrorMessage(error.message);
       });
   };
 
@@ -36,37 +32,23 @@ const SignUpPage = () => {
     event.preventDefault();
 
     const form = event.target;
-    // console.log(form);
-
     const email = form.email.value;
-    // console.log(email)
-
     const password = form.password.value;
-    // console.log(password)
-
     const confirmPassword = form.confirmPassword.value;
-    // console.log(confirmPassword)
 
-    // logic for confirmPassword must be same with password
     if (password !== confirmPassword) {
-      setErrorMessage(
-        "Password doesn't Match! Please, Provide Correct Password"
-      );
+      setErrorMessage("Password doesn't match! Please, provide correct password.");
     } else {
       setErrorMessage("");
 
-      // logic for create user after correct match of confirm password with password
-      createUser(password, email)
+      createUser(email, password)
         .then((userCredential) => {
           const user = userCredential.user;
-          alert("Account Created succesfully !!");
-
-          // navigate to home page
+          alert("Account created successfully!!");
           navigate(from, { replace: true });
         })
         .catch((error) => {
-          // console.log(error.message);
-          alert(`${error.message}`);
+          setErrorMessage(error.message);
         });
     }
   };
@@ -117,14 +99,11 @@ const SignUpPage = () => {
               />
             </div>
 
-            {/* showing error message */}
-            <div>
-              {errorMessage && (
-                <div className="error-message text-danger mb-2">
-                  {errorMessage}
-                </div>
-              )}
-            </div>
+            {errorMessage && (
+              <div className="error-message text-danger mb-2">
+                {errorMessage}
+              </div>
+            )}
 
             <div className="form-group">
               <button type="submit" className="d-block lab-btn">
@@ -133,7 +112,6 @@ const SignUpPage = () => {
             </div>
           </form>
 
-          {/* account bottom */}
           <div className="account-bottom">
             <span className="d-block cate pt-10">
               Have an Account? <Link to="/login">Login</Link>
@@ -143,35 +121,28 @@ const SignUpPage = () => {
               <span>or</span>
             </span>
 
-            {/* social login */}
             <h5 className="subtitle">{socialTitle}</h5>
             <ul className="lab-ul social-icons justfy-content-center">
-              {/* without using map  */}
               <li>
-                {/* this is actually a google login */}
                 <button className="github" onClick={handleRegister}>
                   <i className="icofont-github"></i>
                 </button>
               </li>
-
               <li>
                 <a href="#" className="facebook">
                   <i className="icofont-facebook"></i>
                 </a>
               </li>
-
               <li>
                 <a href="#" className="twitter">
                   <i className="icofont-twitter"></i>
                 </a>
               </li>
-
               <li>
                 <a href="#" className="linkedin">
                   <i className="icofont-linkedin"></i>
                 </a>
               </li>
-
               <li>
                 <a href="#" className="instagram">
                   <i className="icofont-instagram"></i>
